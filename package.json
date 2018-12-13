@@ -1,0 +1,33 @@
+{
+  "name": "discord-hazy-informant",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "cleanup": "rm -rf dist",
+    "test": "echo \"Error: no target spesified\" && exit 1",
+    "build": "tsc -p . --removeComments true",
+    "build:dev": "tsc -p . --sourceMap true --declaration true --declarationMap true",
+    "lint:src": "tslint -p .",
+    "lint:test": "tslint -p test",
+    "start": "cd dist && node main.js",
+    "prebuild": "npm run lint:src && npm run cleanup",
+    "pretest": "npm run lint:test",
+    "prepare": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.10",
+    "@types/node": "^10.12.14",
+    "@types/node-fetch": "^2.1.4",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "discord.js": "^11.4.2",
+    "node-fetch": "^2.3.0"
+  }
+}
